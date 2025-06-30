@@ -6,24 +6,24 @@ Binary search works on sorted arrays. Binary search begins by comparing an eleme
 ```cpp
 
 // An iterative binary search function.
-int binarySearch(int arr[], int low, int high, int x)
+int binarySearch(int arr[], int low, int high, int target)
 {
     // low = left and high = right
     while (low <= high) {
         //int mid = low + (high - low) / 2;
         int mid = (low + high) / 2;
 
-        // Check if x is present at mid
+        // Check if target is present at mid
         if (arr[mid] == x)
             return mid;
 
-        // If x greater, ignore left half
-        if (arr[mid] < x)
+        // If target greater, ignore left half
+        if (arr[mid] < target)
             low = mid + 1; // search the right side of the tree
 
-        // If x is smaller, ignore right half
+        // If target is smaller, ignore right half
         else
-            high = mid - 1; // searh the left side of the tree
+            high = mid - 1; // search the left side of the tree
     }
 
     // If we reach here, then element was not present
